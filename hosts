@@ -1,0 +1,2 @@
+[ceph_mons]
+172.16.0.164 ansible_user=rocky

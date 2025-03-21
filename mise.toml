@@ -1,0 +1,11 @@
+[settings]
+python.uv_venv_auto = true
+
+[tools]
+ansible = "latest"
+python = "3.9"
+ruff = "latest"
+
+[tasks.test]
+env = { ANSIBLE_LIBRARY="./modules" }
+run = "ansible -m ceph_config_key -a 'action=get option=test/key' --become -i \"$TEST_CEPH_MONITOR,\" -u rocky all"
